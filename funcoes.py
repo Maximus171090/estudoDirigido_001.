@@ -1,0 +1,30 @@
+#funcoes.py
+
+def exibir_menu():
+    print('\n[1] Cadastrar item [2] Listar itens [0] Sair')
+
+def cadastrar(itens):
+    nome = input('Digite o nome do item:').strip()
+    if not nome:
+        print('✖ Nome não pode se vazio')
+
+        return
+    if nome in itens:
+        print('✖ Item já existe.')
+
+        return
+    itens.append(nome)
+    print('✔ Item Cadastrado!')
+
+
+def listar(itens):
+    if not itens:
+        print('Nenhum item cadastrado.')
+
+    else:
+        for i, nome in enumerate(itens, start=1):
+            
+            print(f'{i}. {nome}')
+
+
+            
